@@ -208,12 +208,152 @@ To perform GLS using iverilog simulator, we need to add the path of the primitiv
 ![image](https://user-images.githubusercontent.com/104430712/166256725-16387502-0b24-4630-8c76-1a3a06a4b8ac.png)
 ![image](https://user-images.githubusercontent.com/104430712/166256750-237afcd9-d722-4135-bcc2-27b1c6e908b4.png)
 ![image](https://user-images.githubusercontent.com/104430712/166256780-bf54046a-4905-4640-a2e1-84d3a995cfd1.png)
+![image](https://user-images.githubusercontent.com/104430712/166257373-b1fa627d-ca9d-4ebe-9bb8-1e2ec4b4b4b4.png)
+![image](https://user-images.githubusercontent.com/104430712/166257392-c999ec5d-7311-4429-b35d-47cd20430c0b.png)
+![image](https://user-images.githubusercontent.com/104430712/166257468-3af4589c-b1b7-4f08-8f8f-ff6b8acaa2a4.png)
+![image](https://user-images.githubusercontent.com/104430712/166257481-69eb257e-c40a-489f-80ad-b02e0bdae5e4.png)
+![image](https://user-images.githubusercontent.com/104430712/166257501-06c913f3-5dcb-4677-b76a-e75aadeae61c.png)
+![image](https://user-images.githubusercontent.com/104430712/166257513-d03c5b4b-9566-42e3-87ff-efd71e457458.png)
+![image](https://user-images.githubusercontent.com/104430712/166257537-b6ccce6b-1838-4654-ae78-7b9037728dc7.png)
 
+>>>>>>>>BAD_MUX
 
+![image](https://user-images.githubusercontent.com/104430712/166257584-c838228d-78fc-4bcc-8030-916b91e63a3a.png)
 
+![image](https://user-images.githubusercontent.com/104430712/166257604-b9577089-1942-4667-9f49-ad2c7d0f8dfc.png)
 
+![image](https://user-images.githubusercontent.com/104430712/166257635-a4147cde-2da9-480b-9880-c093a3b9457b.png)
 
+![image](https://user-images.githubusercontent.com/104430712/166257666-1b08a73a-72fa-4d26-9dcf-64284a230dbd.png)
 
+![image](https://user-images.githubusercontent.com/104430712/166257678-27246d2b-b899-4662-8441-2c6ab0458e5c.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166257696-a2a9cfc5-b383-4b2e-a017-d42054461f09.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166257708-456ec4e7-ef26-459a-8c49-34906fa7d09f.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166257728-dab45063-b984-47d1-985d-8a62cbf04c4d.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166257747-33602631-e2e4-4534-9ced-6b6b53ef41e4.png)
+
+GLS simulation
+
+$ iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v bad_mux_net.v tb_bad_mux.v
+
+![image](https://user-images.githubusercontent.com/104430712/166257863-71ab401b-62dc-4050-a4ab-e4f8f8ed67da.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166257876-fe7d3b91-22b8-4826-a01e-157171969e9a.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166257907-c3a175de-4eae-4f27-af14-b204f75b48dd.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166257931-8fca7c44-2326-4a62-8198-06d666fbbc84.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166257958-a7e7f4d0-1792-492e-8bf0-556443746216.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166257983-b2fc6b75-bf81-41fb-add3-22abc9559a44.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258009-2f9c1f52-bc7c-4784-aa8f-1a0867dea9d0.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258032-dbbc3bc3-77e7-48b2-b564-f4b596a6f3f7.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258053-ba4450c2-775a-4db5-b7db-2ecf65e54b9b.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258076-978b0577-0119-46ed-9f52-31fed43048c6.png)
+
+ ![image](https://user-images.githubusercontent.com/104430712/166258111-b7fffd84-1aba-45eb-8a45-a11c1b4bba55.png)
+
+Day-5 If Case For Loop and for Generate statements
+
+![image](https://user-images.githubusercontent.com/104430712/166258180-daeba9a2-331f-4c8a-aa20-6255a2945d37.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258207-c6e7b39d-80f6-40dc-ac80-55b9d9305ed9.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258227-b36d7f15-3097-4795-a8bb-140a2c54fcb0.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258246-172613ae-1c3c-4d14-802a-1478fb3fb7df.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258261-219cbb59-e338-4c24-9435-c624bb05c2ba.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258277-7f66bbe6-8486-4469-b48f-909a977faa9e.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258304-71c51548-4721-494d-9192-207d37803c15.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258312-055b0c5d-f2cd-42fd-880a-c051b35e4655.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258328-0c273db4-e0eb-4f42-af38-464d408a8730.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258358-11624e47-c3e4-47eb-a297-f39d2738327f.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258379-c55f6013-0e23-4dc5-adba-e68145fbdd1a.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258392-74c283fb-9939-4d72-8eb2-bdc787c12410.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258427-d9bcef8c-ddef-469a-bba7-325744d5aff9.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258447-83a48aff-5725-4e2f-8644-f8a8e19a849f.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258418-1c652c34-74be-4a90-8c84-0e842f556e9a.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258457-f9054711-949c-4227-b33f-1e475bc301ce.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258502-13310cb4-353a-46cc-bc6e-9e1a28cbe41e.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258483-26fd455f-d011-413c-a33f-a69193ce1987.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258527-9db61c34-4bcf-4910-8608-6933b2231394.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258560-aad5a733-b809-45fd-848a-be1fabf02e83.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258547-de8ba192-9335-4264-884c-be3d92cc749a.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258573-6ca54d8d-3e76-45df-b171-89079f313394.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258590-e651d9d9-d895-4bf7-9923-6e477d5998de.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258609-90f163e0-860d-490c-b14d-213cb2da3ab0.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258632-6cd747cf-33ca-4a2c-8df7-01181b1dbd88.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166258655-412bef65-d45e-48f3-84a8-732f11e4a9ed.png)
+
+For loop statements and For generate statements
+Looping constructs uses for loop and generate for loop statements
+For loop statement
+For loops can be used only inside always block. These loops can be used for evaluating expressions but not for instantaiating hardware. Example we are taking is a 32:1 Mux is as shown below:
+integer i;
+always @(*)
+begin 
+ for(i=0; i<32; i=i=1)
+ begin
+ if (i==sel)
+   y= inp[i];    //Assuming that inp[32:0] bus is declared in the main module.
+ end
+end     
+Generate for loop statement
+Generate for loop cannot be used inside always block but outside always block. Generate for loop is used in instantiating hardware. Taking an example for generate foor loop as shown below
+Suppose we need to instantiate and u_and( .a(), .b(), .y()) for 20 times it is not feasible to and u_and( .a(), .b(), .y()) this many times ie
+   and u_and( .a(), .b(), .y())
+   and u_and( .a(), .b(), .y())
+   and u_and( .a(), .b(), .y())
+   ..................
+   ..................
+   ..................
+   ..................
+   Till 20th and gate instantiation
+Here we use generate for loops to instantiate gates and smaller modules in main modules as my times we want.
+ genvar i
+ generate
+  for (i=0; i,8; i=i+1) begin 
+  and u_and( .a(a[i]), .b(b[i]), .y(y[i]));
+end
+ end
+![image](https://user-images.githubusercontent.com/104430712/166258736-ecda48a3-5cf9-4506-94e2-8b32b293a20c.png)
+
+Here we see that the waveform obtained in normal simulation and GLS simulation are the same.
+By this, we have come to the end of 5 days workshop so by now I have sucessfully learnt theoretical and practical approach on how to simulate, displaying waveform, synthesize, do gate level synthesis (netlist generation) and finally again display the waveforms to check the correctness of the design starting from smaller verilog codes to complex ones.
+Acknowledgements
+1.	Kunal Ghosh - Co-founder(VSD Corp. Pvt. Ltd)
+2.	Shon Taware - VSD Teaching Assistant
 
 
 
