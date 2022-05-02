@@ -88,9 +88,13 @@ The .lib file is a collection of standard cells with different Process corners. 
 Lab Access explanation
 Open the .lib file using g
 vim command
+
+
 ![image](https://user-images.githubusercontent.com/104430712/166254676-10af81f1-a022-43c6-8be7-d2f128aad73b.png)
 ![image](https://user-images.githubusercontent.com/104430712/166254685-8556c2c5-39ec-4fd4-bbb4-c1eb80b0eff3.png)
 ![image](https://user-images.githubusercontent.com/104430712/166254707-9976d439-eda2-4304-800d-5765fd022a34.png)
+
+
 Based on the above images, it can be inferred that even though the behavioural logic are same, they differ in their internal parameters like leakage power and area
 Hierarchical vs Flat Synthesis
 Consider am example code multiple_modules which instantiates an AND & and OR gate logic in separate sub-modules sub_module1 & sub_module2 respectively. The Verilog code for the same is displayed below by invoking the following 
@@ -109,10 +113,14 @@ Invoke yosys
 ![image](https://user-images.githubusercontent.com/104430712/166255025-886aa611-72db-4360-9476-980adf8373b4.png)
 ![image](https://user-images.githubusercontent.com/104430712/166255042-d5254b3e-0567-4a35-8ff0-9cb2c4ba7fe1.png)
 ![image](https://user-images.githubusercontent.com/104430712/166255066-f67ce9ee-af9c-4871-86ea-3d4abfb3c97b.png)
+
 The figure shows the  netlist comprising of sub_module1 & sub_module2 instead of the logic gates AND & OR based netlist. This is because, the multiple_modules RTL design even though is implementing two logic gates based circuit, the gates are actually instances inside two separate sub_modules that are instantiated to obtain the specific logic. This type of sub_module level synthesis is known as Hierarchical Synthesis as the sub_modules are preserved in its hierarchy.
 Now, we can write out the netlist of the hierarchical netlist file and look at the behavioral implementation of the same.
+
 ![image](https://user-images.githubusercontent.com/104430712/166255116-a2e6a27e-3e7d-4227-8dda-1a023c90b787.png)
-Flatting
+>>>>>>>Flatting
+
+
 ![image](https://user-images.githubusercontent.com/104430712/166255165-06306053-58e0-4664-8e39-24935715ea0e.png)
 This command will implement the synthesis procedure without preserving the sub_module hierarchy and we obtain a netlist file of the multiple_modules RTL design implemented using the AND & OR gates
 The flattened netlist and verilog module of the netlist file are obtained and listed as follows:
@@ -120,22 +128,111 @@ The flattened netlist and verilog module of the netlist file are obtained and li
 ![image](https://user-images.githubusercontent.com/104430712/166255263-b8929abb-8011-4778-a35a-6a67e0cba180.png)
 ![image](https://user-images.githubusercontent.com/104430712/166255288-f725b26d-03c4-41f0-a36d-363b2ccbe6ab.png)
 ![image](https://user-images.githubusercontent.com/104430712/166255312-d909b622-20ba-4d71-a288-60f8ae9ff3a6.png)
+
+
 Efficient Flip-flop coding styles and Optimizations
 Flipflops are devices which store a single bit (binary digit) of data in two states '1' or '0'. One common application of these flipflops is in large combinational circuits to avoid glitch errors due to propagation delays between logic gates which cause instability in output. The most common types of flip-flops are D-Flipflop, SR-Flipflop, JK Flipflop, T-Flipflop. There are various different methods of implementing these flipflops like synchronous reset and synchronous set or asynchronous reset and set etc. Listed below are different implementation / coding style of D-flipflop with async-reset or sync-reset or async set etc.
+
 ![image](https://user-images.githubusercontent.com/104430712/166255403-1b7e0319-92b1-4600-b81d-cd27bd010ab5.png)
 ![image](https://user-images.githubusercontent.com/104430712/166255417-39804c98-870f-49d7-acfc-3199b436f8f9.png)
+
+
 Further, the design files can be synthesized in YOSYS as we have done in the previous sessions. The one new command we use here is the dfflibmap command, that is used when we deploy D-FlipFlops in the RTL design. The dfflibmap command links or maps the library files that contain the details of D-Flipflops to be used for synthesis. The coding snippet for synthesizing a D-Flipflop in YOSYS is given below:
+
+
 ![image](https://user-images.githubusercontent.com/104430712/166255461-09505bf4-5b0c-441b-908a-786575274e45.png)
 ![image](https://user-images.githubusercontent.com/104430712/166255473-95113766-0e54-4cd9-ad04-c62a74166539.png)
 ![image](https://user-images.githubusercontent.com/104430712/166255496-d91ad129-60ed-48bc-9c74-11c3b3844f4e.png)
 ![image](https://user-images.githubusercontent.com/104430712/166255523-1984738c-79a2-49cc-9864-6f9f02b96766.png)
 ![image](https://user-images.githubusercontent.com/104430712/166255539-d69225ed-b08f-47cc-81d4-caa7e48adc7c.png)
-![Uploading image.png…]()
+
 In the above netlist, it can be seen that the asynchronous reset D-Flipflop is implemented as a D-Flipflop with Active Low reset. This Active low reset is fed with an inverter to convert it into an Active High reset as an input to reset port of the flop. Similarly, using the above snippet, synthesis can be done for other D-Flipflop models in the verilog_models folder and netlist can be obtained for your study.
  
+ day-3 : Combinational and Sequential Optimizations
+Intro to Combinational Logic Optimizations
+•	Primarily to squeeze the logic to get the most optimized design
+o	An optimized design results in comprehensive Area and Power saving
+Types of Combinational Optimizations
+•	Constant Propagation
+o	Direct Optimization Technique
+•	Boolean Logic Optimization
+o	K-Map based
+o	Quine Mckluskey Algorithms
+CONSTANT PROPAGATION
+In Constant propagation techniques, inputs that are no way related or affecting the changes in the output are ignored/optimized to simplify the combination logic thereby saving area and power usage by those input pins.
+
+BOOLEAN LOGIC OPTIMIZATION
+Boolean logic optimization is nothing simplifying a complex boolean expression into a simplified expression by utilizing the laws of boolean logic algebra.
+
+ ![image](https://user-images.githubusercontent.com/104430712/166256012-d3275027-1baf-4f87-9659-a490a22e4089.png)
+
+Thus, the complex ternary operator based equation is simplified into a simple xor gate with two inputs a and c
+The following pictures depict the various versions of combination logic expressions simplified using Combinational logic optimization techniques.
+
+![image](https://user-images.githubusercontent.com/104430712/166256075-ea02ec83-6ebc-4efa-b634-b6fc7572d924.png)
+
+ ![image](https://user-images.githubusercontent.com/104430712/166256190-17a7ff72-22a9-4f2e-a94b-0545c6563397.png)
+
+ ![image](https://user-images.githubusercontent.com/104430712/166256212-2352637a-2bf8-47a3-96d2-f7526347f842.png)
  
- 
- 
- 
+![image](https://user-images.githubusercontent.com/104430712/166256236-4caedb58-f93a-4c7b-a526-397dc6141d24.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166256261-4fd9e5f7-140f-4e29-8ce7-ed3bdfdb356e.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166256345-de750dfd-b985-492a-a42e-1307a5764618.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166256384-0bebcecf-31f3-4563-8573-5559a1cfd315.png)
+
+In the above snippet, we see a new code opt_clean -purge which is used to optimize the design by removing un-used net and components in the design after the design top level is synthesized using synt -top
+
+The above images depict various optimizations done on the expressions being simplified by boolean logic optimization.
+Similarly, incase we use multiple modules in a single code, we use flatten command as used in Flat Synthesis to perform the logic optimization of multiple modules after they are reduced to simple modules using flatten.
+Some examples implemented are listed below:
+
+![image](https://user-images.githubusercontent.com/104430712/166256445-29f7602e-30ce-4854-9621-0d73fa99dd8c.png)
+![image](https://user-images.githubusercontent.com/104430712/166256482-2e78540a-5db5-448c-8ff2-3e8ac45dd5c1.png)
+![image](https://user-images.githubusercontent.com/104430712/166256510-a7021a28-d04b-4c82-9b5e-4b574645c7b7.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166256529-ff012ae0-6fad-4f6f-a2ab-5f811d00a542.png)
+
+![image](https://user-images.githubusercontent.com/104430712/166256580-840a2833-7539-4d1c-b322-d933460f1862.png)
+
+Day 4 - Gate Level Simulation(GLS), Blocking vs Non-blocking and Synthesis-Simulation Mismatch
+What is Gate Level Simulation (GLS) ?
+Running the testbench against the synthesized netlist ouput as a DUT is known as Gate Level Simulation (GLS). The Output netlist should logically be same as the RTL code so that the testbench will align itself when we simulate both the files to obtain the waveforms.
+Why GLS?
+GLS is required to verify the logical correctness of the design post synthesis with the help of the netlist file. It ensures whether the timing of the design is met and for thi, the GLS used to run with delay annotations.
+How to perform GLS after obtaining a netlist output for a specific RTL design?
+To perform GLS using iverilog simulator, we need to add the path of the primitives and sky130 library files along with the netlist verilog code and testbench to successfully obtain the waveforms of post synthesis simulation.
+![image](https://user-images.githubusercontent.com/104430712/166256700-7082d413-1e63-4598-9290-5b0cb749d957.png)
+![image](https://user-images.githubusercontent.com/104430712/166256725-16387502-0b24-4630-8c76-1a3a06a4b8ac.png)
+![image](https://user-images.githubusercontent.com/104430712/166256750-237afcd9-d722-4135-bcc2-27b1c6e908b4.png)
+![image](https://user-images.githubusercontent.com/104430712/166256780-bf54046a-4905-4640-a2e1-84d3a995cfd1.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  
